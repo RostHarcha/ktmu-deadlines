@@ -1,0 +1,28 @@
+[project]
+name = "ktmu-deadlines-backend"
+version = "0.1.0"
+readme = "README.md"
+authors = [
+    { name = "rostislaww", email = "rostharcha@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "alembic>=1.20.1",
+    "asyncpg>=0.32.0",
+    "fastapi[standard]>=0.163.1",
+    "pydantic>=2.14.3",
+    "pydantic-settings>=2.16.3",
+    "sqladmin[auth]>=0.32.0",
+    "sqlalchemy[asyncio]>=2.1.8",
+]
+
+[project.scripts]
+ktmu-deadlines-backend = "ktmu_deadlines_backend:main"
+
+[tool.ruff]
+target-version = "py314"
+extend-exclude = ["alembic/versions/*.py"]
+
+[build-system]
+requires = ["uv_build>=0.13.5,<0.14.0"]
+build-backend = "uv_build"
